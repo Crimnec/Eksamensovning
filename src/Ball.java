@@ -26,6 +26,11 @@ public class Ball extends Equipment {
 
     @Override
     public String toString() {
-        return "Type: " + equipmentType + "id: " + id + locker + "Needs replacement: " + "Balltype: " + ballType;
+        return "Type: " + equipmentType + '\n' +
+                "id: " + id + '\n' +
+                locker + '\n' +
+                "Needs replacement: " + needsReplacement + '\n' +
+                "Balltype: " + ballType + '\n' +
+                "Needs air: " + needsAir + '\n';
     }
 }

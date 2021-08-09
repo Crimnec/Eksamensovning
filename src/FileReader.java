@@ -11,27 +11,29 @@ public class FileReader {
                 EquipmentType equipmentType = EquipmentType.Ball;
                 int id = Integer.parseInt(input.nextLine());
                 String locker = input.nextLine();
-                Boolean needsReplacement = Boolean.parseBoolean(input.nextLine());
+                boolean needsReplacement = Boolean.parseBoolean(input.nextLine());
                 BallType ballType = BallType.valueOf(input.nextLine());
-                Boolean needsAir = Boolean.parseBoolean(input.nextLine());
+                boolean needsAir = Boolean.parseBoolean(input.nextLine());
                 equipment.add(new Ball(equipmentType, id, locker, needsReplacement, ballType, needsAir));
             } else {
                 EquipmentType equipmentType = EquipmentType.TableTennisRacket;
                 int id = Integer.parseInt(input.nextLine());
                 String locker = input.nextLine();
-                Boolean needsReplacement = Boolean.parseBoolean(input.nextLine());
-                Boolean needsNewPad = Boolean.parseBoolean(input.nextLine());
+                boolean needsReplacement = Boolean.parseBoolean(input.nextLine());
+                boolean needsNewPad = Boolean.parseBoolean(input.nextLine());
                 equipment.add(new TableTennisRacket(equipmentType, id, locker, needsReplacement, needsNewPad));
             }
         }
         input.close();
     }
 
-    public void returnEquipment() throws FileNotFoundException {
-        ArrayList<Equipment> equipment = new ArrayList<>();
-        File file = new File("equipment.txt");
-        readFile(equipment, file);
-        for (Equipment e : equipment) {
+    public void returnEquipment(ArrayList<Equipment> arrayList, File file) throws FileNotFoundException {
+        System.out.println("""
+                ===============
+                 All Equipment
+                ===============""");
+        readFile(arrayList, file);
+        for (Equipment e : arrayList) {
             System.out.println(e.toString());
         }
     }

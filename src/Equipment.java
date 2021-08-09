@@ -1,8 +1,8 @@
-public class Equipment {
-    private EquipmentType equipmentType;
-    private int id;
-    private String locker;
-    private boolean needsReplacement;
+public abstract class Equipment {
+    public EquipmentType equipmentType;
+    public int id;
+    public String locker;
+    public boolean needsReplacement;
 
     public Equipment(EquipmentType equipmentType, int id, String locker, boolean needsReplacement) {
         this.equipmentType = equipmentType;
@@ -11,18 +11,50 @@ public class Equipment {
         this.needsReplacement = needsReplacement;
     }
 
-    public void printState() {
-        System.out.println( "Type: " + equipmentType.toString() + '\n' +
+    public EquipmentType getEquipmentType() {
+        return equipmentType;
+    }
+
+    public void setEquipmentType(EquipmentType equipmentType) {
+        this.equipmentType = equipmentType;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLocker() {
+        return locker;
+    }
+
+    public void setLocker(String locker) {
+        this.locker = locker;
+    }
+
+    public boolean getNeedsReplacement() {
+        return needsReplacement;
+    }
+
+    public void setNeedsReplacement(boolean needsReplacement) {
+        this.needsReplacement = needsReplacement;
+    }
+
+    /* public void printState() {
+        System.out.println( "Type: " + equipmentType + '\n' +
                             "Id: " + id + '\n' +
                             locker + '\n' +
                             "Needs replacement: " + needsReplacement );
                             if (equipmentType.equals(EquipmentType.Ball)) {
-                                System.out.println( Ball.getBallType() + '\n' +
+                                System.out.println( "Ball.getBallType()" + '\n' +
                                                     "Ball.getNeedsAir()" + '\n'
                                 );
                             } else {
                                 System.out.println( "TableTennisRacket.needsNewPad()" + '\n'
                                 );
                             }
-    }
+    } */
 }

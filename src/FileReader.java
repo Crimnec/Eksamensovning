@@ -32,7 +32,7 @@ public class FileReader {
         File file = new File("equipment.txt");
         readFile(equipment, file);
         for (Equipment e : equipment) {
-            e.printState();
+            System.out.println(e.toString());
         }
     }
 }

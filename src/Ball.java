@@ -12,7 +12,20 @@ public class Ball extends Equipment {
         return ballType;
     }
 
+    public void setBallType(BallType ballType) {
+        this.ballType = ballType;
+    }
+
     public boolean getNeedsAir() {
         return needsAir;
+    }
+
+    public void setNeedsAir(boolean needsAir) {
+        this.needsAir = needsAir;
+    }
+
+    @Override
+    public String toString() {
+        return "Type: " + equipmentType + "id: " + id + locker + "Needs replacement: " + "Balltype: " + ballType;
     }
 }
